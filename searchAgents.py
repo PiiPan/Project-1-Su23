@@ -538,13 +538,8 @@ class ClosestDotSearchAgent(SearchAgent):
 
         "*** YOUR CODE HERE ***"
         
-        solution = search.aStarSearch(problem, heuristic=foodHeuristic)
-
-        # Extract the actions from the solution
-        actions = [node.action for node in solution]
-
-        # Return the actions to reach the closest dot
-        return actions
+        solution = search.aStarSearch(problem)
+        return solution
        
 
 class AnyFoodSearchProblem(PositionSearchProblem):
@@ -581,6 +576,7 @@ class AnyFoodSearchProblem(PositionSearchProblem):
         x,y = state
 
         "*** YOUR CODE HERE ***"
+
         foodGrid = self.food
         return foodGrid[x][y]
         
